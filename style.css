@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+body{
+}
+.jumbotron{
+    text-align:center;
+    background:#EEE;
+    box-shadow: 0 0 1px #AAA;
+    padding:30px;
+}
+.title{
+    color:black;
+    margin-bottom:15px;
+}
+.desc{
+    color:#444;
+    position:relative;
+}
+.desc:hover::after{
+    display:block;
+}
+.desc:after{
+    display:none;
+    content:'Nos outros vais ter de te desemerdar';
+    position:absolute;
+    font-size:0.5em;
+    top:100%;
+    background:white;
+    border:1px solid gainsboro;
+    padding:5px;
+    left:50%;
+}
+#code_input{
+    resize:none;
+    width:100%;
+    overflow:auto;
+}
+.code{
+    display:block;
+    margin:auto;
+    padding:10px;
+    min-height:20em;
+    font-size:15px;
+    text-align:left;
+    font-family:'Consolas',monospace,sans-serif;
+    border:1px solid gainsboro;
+    background: white;
+    max-width:750px;
+}
+.info{
+    background:#444;
+    color:white;
+    display:inline-block;
+    padding:5px;
+    font-size:0.8em;
+    position:absolute;
+    right:0;
+}
+.analyzer_section{
+    text-align:center;
+    background:white;
+    padding:20px;
+}
+.action-btn{
+    display:inline-block;
+    margin:10px auto;
+    background:dodgerblue;
+    color:white;
+    /*accidental bounce animation*/
+    padding:10px 14px;
+    border-radius:5px;
+    border:2px solid dodgerblue;
+    text-decoration:none;
+    font-size:0.9em;
+    transition-duration:0.3s;
+}
+.action-btn:hover{
+    /*acidental bounce animation*/
+    padding:10px;
+    cursor:pointer;
+    background:white;
+    color:dodgerblue;
+    font-weight:bold;
+}
+#output_msg{
+    margin-top:60px;
+    text-align:right;
+    font-weight:bold;
+    display:none;
+}
+.output_good{
+    background:forestgreen;
+}
+.err{
+    color:red;
+    font-weight:bold;
+}
+.err:after{
+    content:'';
+    position:absolute;
+    padding:10px 0;
+    background:rgba(256,0,0,0.2);
+    left:0;
+    width:100%;
+    z-index:-1;
+}
+#processed_code{
+    z-index:3;
+    position:relative;
+   background:rgba(256,256,256,0.5);
+    white-space: pre-wrap;
+}
+/**/
+#modal{
+    display:none;
+    z-index:9;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+#modal .box{
+    background:white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:20px 40px;
+    border-radius:5px;
+}
+/**/

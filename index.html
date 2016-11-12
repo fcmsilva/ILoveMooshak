@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>I ❤️ Mooshak</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!--<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=java&amp;skin=desert"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="beautify.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div id="modal">
+            <div class="box"><span id="box_msg"></span></div>
+        </div>
+        <div class="jumbotron">
+            <h1 class="title">I ❤️ Mooshak</h1>
+            <h3 class="desc">Encontra os erros do Compile Time Error</h3>
+        </div>
+        <div class="analyzer_section">
+           <!--
+            <button onclick='document.getElementById("ab").innerHTML=js_beautify("public Class{public int a=2;}");'>a</button>
+            <pre id="ab"></pre>
+            -->
+            <div class="info">Introduz aqui o teu código</div>
+            <textarea id="code_input" class="code"></textarea>
+            <a class="action-btn" href="#" id="analyze_btn">Verificar Código</a>
+            <div class="info output_good" id="output_msg">Não foram encontrados erros</div>
+            <pre id="processed_code" class="code"></pre>
+        </div>
+    </body>
+</html>
