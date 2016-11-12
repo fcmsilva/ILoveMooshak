@@ -1,23 +1,16 @@
 $( document ).ready(function() {
 
 var msgs=["A rezar ao Maló","A invocar Satanás","A sacrificar uma virgem","A pedir clemência ao Mooshak","A queimar as teclas","A chumbar AM","A fazer memes","A tirar o esparguete do código"];
-//array com indexes das frases usadas
-var sentencesUsed = [];
-    
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-function getRandomMsg(){
-    sentencesUsed.indexOf(1);
-    var i = getRandomInt(0,msgs.length-1);
-    while(sentencesUsed.indexOf(i)!=-1){
-        i = getRandomInt(0,msgs.length-1);
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
     }
-    sentencesUsed.push(i);
-    console.log(i);
-    console.log(sentencesUsed);
-    return msgs[i];
-}
+    return array;
+}    
 
 function isPretty(){
     return true;
@@ -57,8 +50,9 @@ function jumpTo(id){
 
 function funny(callback){
     var i=0;
+    var msg_arr = shuffleArray(msgs);
     function changeMsg(){
-        $("#box_msg").text(getRandomMsg()+"...");
+        $("#box_msg").text(msg_arr[i]+"...");
         setTimeout(function(){
             i++;
             if(i<3){
@@ -86,6 +80,12 @@ function processCode(){
         error_obj = findAsciiErrors(input);
         output_txt = error_obj.errors_msg;
         writeToOutput(output_txt);
+        if(error_obj.errors_location.length != 0){
+            $("#output_msg").removeClass('output_good').addClass('output_bad').html("Foram encontrados "+error_obj.errors_location.length+" erros");
+        } else{
+            $("#output_msg").removeClass('output_bad').addClass('output_good').html("Não foram encontrados erros");
+        }
+        $("#output_msg").show();
         jumpTo("#processed_code");
     });
 }

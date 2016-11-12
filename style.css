@@ -8,8 +8,8 @@ body{
 }
 .jumbotron{
     text-align:center;
-    background:#EEE;
-    box-shadow: 0 0 1px #AAA;
+    background:white;
+    border-bottom:1px solid gainsboro;
     padding:30px;
 }
 .title{
@@ -54,16 +54,14 @@ body{
 .info{
     background:#444;
     color:white;
-    position:absolute;
+    max-width:750px;
    padding:5px;
    font-size:0.8em;
-left:50%;
--webkit-transform:translate(-50%,0);
-        transform:translate(-50%,0);
+    display:inline-block;
 }
 .analyzer_section{
     text-align:center;
-    background:white;
+    background:#FAFAFA;
     padding:20px;
 }
 .action-btn{
@@ -89,16 +87,19 @@ left:50%;
     font-weight:bold;
 }
 #output_msg{
-    margin-top:60px;
-    text-align:right;
+    margin:20px auto auto auto;
+    text-align:left;
     font-weight:bold;
     display:none;
 }
 .output_good{
     background:forestgreen;
 }
+.output_bad{
+    background:crimson;
+}
 .err{
-    color:red;
+    color:crimson;
     font-weight:bold;
 }
 .err:after{
