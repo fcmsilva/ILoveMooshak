@@ -13,9 +13,13 @@ function shuffleArray(array) {
 }    
 
 function isPretty(){
-    return true;
+    return ($("#pretty").is(':checked'));
 }    
 
+function noTimeForShit(){
+    return ($("#hurry").is(':checked'));
+}
+    
 function charAllowed(charCode){
     return (charCode>0 && charcode<127);
 }
@@ -49,6 +53,8 @@ function jumpTo(id){
 }
 
 function funny(callback){
+    console.log(noTimeForShit());
+    if(!noTimeForShit()){
     var i=0;
     var msg_arr = shuffleArray(msgs);
     function changeMsg(){
@@ -64,7 +70,9 @@ function funny(callback){
     }
 
     changeMsg();
-    sentencesUsed=[];
+    } else{
+        callback();
+    }
     
 }
 function processCode(){

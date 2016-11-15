@@ -64,9 +64,20 @@ body{
     background:#FAFAFA;
     padding:20px;
 }
+.option-area{
+    padding:20px;
+}
+.option-area label{
+    padding:5px 10px;
+}
+.option-area input:checked + label{
+    font-weight:bold;
+    color:dodgerblue;   
+}
+
 .action-btn{
     display:inline-block;
-    margin:10px auto;
+    margin:auto;
     background:dodgerblue;
     color:white;
     /*accidental bounce animation*/
