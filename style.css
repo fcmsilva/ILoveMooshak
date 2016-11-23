@@ -88,6 +88,7 @@ body{
     font-size:0.9em;
     -webkit-transition-duration:0.3s;
             transition-duration:0.3s;
+    margin-bottom:20px;
 }
 .action-btn:hover{
     /*acidental bounce animation*/
@@ -127,6 +128,11 @@ body{
     position:relative;
    background:rgba(256,256,256,0.5);
     white-space: pre-wrap;
+}
+#footer{
+    padding-bottom:10px;
+    text-align:center;
+    color:#AAA;
 }
 /**/
 #modal{
