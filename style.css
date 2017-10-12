@@ -5,6 +5,7 @@
     font-family:sans-serif;
 }
 body{
+    background:#FAFAFA;
 }
 .jumbotron{
     text-align:center;
@@ -25,13 +26,12 @@ body{
 }
 .desc:after{
     display:none;
-    content:'Nos outros vais ter de te desemerdar';
+    content:'Nos outros vais ter de te desenmerdar';
     position:absolute;
     font-size:0.5em;
     top:100%;
-    background:white;
-    border:1px solid gainsboro;
     padding:5px;
+    color:#aaa;
     left:50%;
 }
 #code_input{
@@ -39,17 +39,22 @@ body{
     width:100%;
     overflow:auto;
 }
-.code{
+.processed_code{
     display:block;
     margin:auto;
     padding:10px;
-    min-height:20em;
     font-size:15px;
     text-align:left;
     font-family:'Consolas',monospace,sans-serif;
     border:1px solid gainsboro;
     background: white;
     max-width:750px;
+    z-index:3;
+    position:relative;
+    background:rgba(256,256,256,0.5);
+    white-space: pre-wrap;
+    /*max-height:500px;*/
+    overflow:auto;
 }
 .info{
     background:#444;
@@ -61,7 +66,7 @@ body{
 }
 .analyzer_section{
     text-align:center;
-    background:#FAFAFA;
+
     padding:20px;
 }
 .option-area{
@@ -98,11 +103,17 @@ body{
     color:dodgerblue;
     font-weight:bold;
 }
-#output_msg{
+.output_msg{
     margin:20px auto auto auto;
     text-align:left;
     font-weight:bold;
-    display:none;
+    width:100%;
+    /*display:none;*/
+}
+.output_msg span{
+    text-decoration:underline;
+    padding-left:10px;
+    font-size:1.3em;
 }
 .output_good{
     background:forestgreen;
@@ -123,16 +134,15 @@ body{
     width:100%;
     z-index:-1;
 }
-#processed_code{
-    z-index:3;
-    position:relative;
-   background:rgba(256,256,256,0.5);
-    white-space: pre-wrap;
+.processed_code{
+
 }
 #footer{
-    padding-bottom:10px;
+    padding-top:30px;
     text-align:center;
-    color:#AAA;
+    color:#BBB;
+    font-size:0.8em;
+    background:transparent;
 }
 /**/
 #modal{
@@ -156,3 +166,37 @@ body{
     border-radius:5px;
 }
 /**/
+#uploader{
+    border: 1px solid gainsboro;
+    background: white;
+    padding: 8px;
+}
+h4{
+    color:#444;
+    margin-bottom:10px;
+    animation:rainbow;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function:linear;
+}
+/* The animation code */
+@keyframes rainbow {
+    0% {color: green;}
+    20% {color: crimson;}
+    40% {color: hotpink;}
+    60% {color:purple;}
+    80% {color: blue;}
+    100% {color: green;}
+}
+
+p#total-report {
+    margin: auto;
+    margin-top: 30px;
+    max-width: 300px;
+    padding: 5px;
+    background: gainsboro;
+    border-radius: 50px;
+    color:#333;
+    font-size:0.9em;
+    font-weight: bold;
+}
