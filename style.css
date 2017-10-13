@@ -26,7 +26,7 @@ body{
 }
 .desc:after{
     display:none;
-    content:'Nos outros vais ter de te desenmerdar';
+    content:'Nos outros desenmerda-te';
     position:absolute;
     font-size:0.5em;
     top:100%;
